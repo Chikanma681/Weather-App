@@ -1,13 +1,11 @@
+// create a main component and lift up the state to that component
+// create protected routes for cards
+// fetch api request
+// as for now just the api request remember you have installed react-router-dom
+// use axios
+
 import React, { Component } from "react";
-import {
-  Button,
-  FormGroup,
-  Form,
-  Label,
-  Input,
-  FormText,
-  Col,
-} from "reactstrap";
+import { Button, FormGroup, Form, Label, Input, Col } from "reactstrap";
 
 class Forms extends Component {
   state = {
@@ -19,12 +17,25 @@ class Forms extends Component {
     // ... submit to an API
     event.preventDefault();
     console.log(this.state.city);
+
+    const baseurl = 'http://api.weatherstack.com/current';
+    const url=`${baseurl}?access_key=${process.env.REACT_APP_API_KEY}&query={this.state.city}`;
+
+    
+
   };
+
   handleInputChange = (event) => {
     event.preventDefault();
-    this.setState({ 
-        [event.target.name]:event.target.value
-  })};
+    const name = event.target.name;
+    this.setState({
+      [name]: event.target.value,
+    });
+  };
+
+  componentDidMount() {
+
+  }
 
   render() {
     return (

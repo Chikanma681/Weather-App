@@ -6,3 +6,5 @@
 - Definitely a SPA using Router
 - Add alerts if city is invalid
 - Make desktop app using electron JS
+- Uses Redux to complicate it
+
