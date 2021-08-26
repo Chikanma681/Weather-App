@@ -3,7 +3,6 @@ import { Jumbotron, Navbar } from "reactstrap";
 
 class Header extends Component {
   state = {
-      city:null,
   };
   render() {
     return (

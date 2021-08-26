@@ -10,11 +10,22 @@ import {
 } from "reactstrap";
 
 class Forms extends Component {
-  state = {};
-
-  handleSubmit=()=>{
-    
+  state = {
+    city: null,
   };
+
+  handleSubmit = (event) => {
+    // ... get form data
+    // ... submit to an API
+    event.preventDefault();
+    console.log(this.state.city);
+  };
+  handleInputChange = (event) => {
+    event.preventDefault();
+    this.setState({ 
+        [event.target.name]:event.target.value
+  })};
+
   render() {
     return (
       <React.Fragment>
@@ -26,7 +37,7 @@ class Forms extends Component {
         <div className="container">
           <div className="col-12">
             <div className="col-12 col-md-9">
-              <Form>
+              <Form onSubmit={this.handleSubmit}>
                 <FormGroup row>
                   <Col>
                     <Label htmlFor="cityInput" md={2}>
@@ -39,13 +50,14 @@ class Forms extends Component {
                       name="city"
                       placeholder="City"
                       md={10}
+                      required
+                      onChange={this.handleInputChange}
                     />
                   </Col>
                 </FormGroup>
                 <FormGroup row>
                   <Col md={{ size: 10 }}>
                     <br />
-
                     <Button type="submit" color="primary">
                       Enter
                     </Button>
