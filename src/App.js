@@ -1,10 +1,12 @@
 import Header from "./components/header";
-import React from 'react'
+import Forms from "./components/form";
+import React from "react";
 
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <Header />
+      <Forms />
     </div>
   );
 }
