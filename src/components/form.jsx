@@ -3,6 +3,9 @@
 // fetch api request
 // as for now just the api request remember you have installed react-router-dom
 // use axios
+// read about componentDidMount
+// extract all the value and display them on a Card
+// lift up the state
 
 import React, { Component } from "react";
 import { Button, FormGroup, Form, Label, Input, Col } from "reactstrap";
@@ -10,19 +13,36 @@ import { Button, FormGroup, Form, Label, Input, Col } from "reactstrap";
 class Forms extends Component {
   state = {
     city: null,
+    temperature:null,
+    weather_descriptions:null,
+    weather_icons:null;
   };
 
   handleSubmit = (event) => {
     // ... get form data
     // ... submit to an API
+
     event.preventDefault();
     console.log(this.state.city);
 
-    const baseurl = 'http://api.weatherstack.com/current';
-    const url=`${baseurl}?access_key=${process.env.REACT_APP_API_KEY}&query={this.state.city}`;
+    const baseurl = "http://api.weatherstack.com/current";
+    const url = `${baseurl}?access_key=${process.env.REACT_APP_API_KEY}&query=${this.state.city}`;
 
-    
-
+    fetch(url).then(
+        (response) =>{
+          if (response.status !== 200) {
+            console.log('Looks like there was a problem. Status Code: ' +
+              response.status);
+            return;
+          }
+          response.json().then((data) =>{
+            console.log(data);
+          });
+        }
+      )
+      .catch((err) => {
+        console.log('Fetch Error: ', err);
+      });
   };
 
   handleInputChange = (event) => {
@@ -33,9 +53,7 @@ class Forms extends Component {
     });
   };
 
-  componentDidMount() {
-
-  }
+  componentDidMount() {}
 
   render() {
     return (
