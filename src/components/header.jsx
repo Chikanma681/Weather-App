@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { Jumbotron, Navbar } from "reactstrap";
 
 class Header extends Component {
-  state = {
-  };
+  state = {};
   render() {
     return (
       <React.Fragment>

@@ -99,7 +99,8 @@ class Forms extends Component {
                 <CardTitle tag="h5">{this.state.city}</CardTitle>
                 <CardSubtitle tag="h6">{this.state.location}</CardSubtitle>
                 <CardText>
-                  Weather in C: {this.state.temperature}<br/>
+                  Weather in C: {this.state.temperature}
+                  <br />
                   Description: {this.state.weather_descriptions}
                 </CardText>
               </CardBody>
