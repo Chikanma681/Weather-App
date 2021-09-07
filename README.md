@@ -1,8 +1,5 @@
 ## Weather Simple React Project
-
-- Minimalistic design 
-- Simple React JS App
-- Only works locally because I am using a free API Plan
+## I am using a FREE API plan so the projects only works locally
 
 ## Example 1
  ![Github Photo 1](/public/assets/E1.PNG)
