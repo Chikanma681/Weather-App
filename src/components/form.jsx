@@ -42,7 +42,8 @@ class Forms extends Component {
     const baseurl = "http://api.weatherstack.com/current";
     const url = `${baseurl}?access_key=${process.env.REACT_APP_API_KEY}&query=${this.state.city}`;
 
-    fetch(url)
+  componentDidMount(){
+      fetch(url)
       .then((response) => {
         if (response.status !== 200) {
           console.log(
@@ -73,6 +74,7 @@ class Forms extends Component {
       });
     return;
   };
+  }
 
   handleInputChange = (event) => {
     event.preventDefault();
