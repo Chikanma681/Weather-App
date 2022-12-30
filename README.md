@@ -1,4 +1,4 @@
-## Weather Simple React Project
+## Weather Simple React Project (v2)
 ## I am using a FREE API plan so the projects only works locally
 
 ## Example 1
